@@ -16,7 +16,7 @@ high-quality final answer plus metadata.
 - **Model client** (`src/models.py`): wraps the Anthropic Python SDK; use `get_main_client()` / `get_cheap_client()` for lazy-initialized singletons.
 - **API** (`src/api/main.py`): FastAPI app exposing the orchestration endpoint.
 - **Config** (`src/config.py`): environment variables, defaults, and `validate_config()` startup check.
-- **Tests** (`tests/`): orchestrator pipeline, API endpoint, individual agent, and config validation tests (21 tests, no real API calls needed).
+- **Tests** (`tests/`): orchestrator pipeline, API endpoint, individual agent, and config validation tests (22 tests, no real API calls needed).
 
 ### High-level flow
 
