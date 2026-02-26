@@ -16,7 +16,7 @@ high-quality final answer plus metadata.
 - **Model client** (`src/models.py`): wraps the Anthropic Python SDK; use `get_main_client()` / `get_cheap_client()` for lazy-initialized singletons.
 - **API** (`src/api/main.py`): FastAPI app exposing the orchestration endpoint.
 - **Config** (`src/config.py`): environment variables, defaults, and `validate_config()` startup check.
-- **Tests** (`tests/`): orchestrator pipeline, API endpoint, and individual agent tests (20 tests, no real API calls needed).
+- **Tests** (`tests/`): orchestrator pipeline, API endpoint, individual agent, and config validation tests (21 tests, no real API calls needed).
 
 ### High-level flow
 
@@ -108,6 +108,7 @@ Tests include:
 - `test_orchestrator.py` — end-to-end pipeline tests with a stub client.
 - `test_api.py` — FastAPI endpoint tests with TestClient (requires `httpx`).
 - `test_agents.py` — individual agent and `ClaudeClient.generate` unit tests.
+- `test_config.py` — startup validation tests for `validate_config()`.
 
 ### Code style
 
@@ -136,7 +137,10 @@ src/
 tests/
 ├── test_orchestrator.py  # End-to-end orchestrator pipeline tests
 ├── test_api.py           # FastAPI endpoint tests (TestClient)
-└── test_agents.py        # Individual agent + ClaudeClient unit tests
+├── test_agents.py        # Individual agent + ClaudeClient unit tests
+└── test_config.py        # Config startup validation tests
+notes/
+└── QC_REPORT.md          # Internal quality-control report
 ```
 
 ## Roadmap

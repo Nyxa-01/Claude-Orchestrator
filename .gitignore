@@ -35,6 +35,9 @@ build/
 # Jupyter
 .ipynb_checkpoints/
 
+# Claude Code internal files (memory, plans, session data)
+.claude/
+
 # Claude Code temporary working-directory markers
 tmpclaude-*
 nul
