@@ -41,3 +41,6 @@ build/
 # Claude Code temporary working-directory markers
 tmpclaude-*
 nul
+
+# Log files
+*.log
